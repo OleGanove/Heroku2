@@ -1,0 +1,165 @@
+
+
+
+<% if flash[:notice] == "Dein Beitrag wurde erfolgreich gespeichert." %>
+  <% content_for :title, "Beitrag erfolgreich erstellt" %>
+<% end %>
+
+<% if flash[:notice] == "Deine Daten wurden aktualisiert." %>
+  <% content_for :title, "Daten aktualisiert" %>
+<% end %>
+
+
+<div class="wrap-all-posts col-md-10 col-md-offset-1">
+
+<% if current_user.group == 0 || current_user.group == 1 %>
+  <div class="info col-md-12">
+  	<h2 class="header-title">Angepinnte Beiträge</h2>
+  	<p>
+  		Hier findest Artikel, die von unseren Kuratoren angepinnt wurden. 
+  	</p>
+  </div>
+<% else %>
+  <div class="info col-md-12">
+    <h2 class="header-title">Zufällige Beiträge</h2>
+    <p>
+      Hier findest du zufällige Artikel unserer Kuratoren. 
+    </p>
+  </div>  
+<% end %>
+
+</div>
+
+<div class="col-md-10 col-md-offset-1 whole-carousel">
+  <%= render "layouts/carousel" %>
+</div>
+
+<div class="wrap-all-posts col-md-10 col-md-offset-1">
+
+<br>
+
+<div class="info col-md-12">
+  <h2 id="anchor" class="header-title">Alle Beiträge</h2>
+  <p>
+     Hier findest du alle Beiträge unserer Kuratoren, fein säuberlich, chronologisch sortiert. 
+  </p>
+</div>
+
+<% i = 0 %>
+
+<div class="col-md-12 ">
+<% @all_posts.in_groups_of(3).each do |post_array| %>
+
+  <% post_array.each_with_index do |post, index| %>
+
+      <div class="col-md-6 all-posts-margin <%= "post" + i.to_s if post.is_a?(Fpost)%>">
+      <% if post.is_a?(Post) %>
+        <%= render :partial => "layouts/index-preview-bubble", :locals => {:post => post} %> 
+      <% else %>
+        <%= render :partial => "layouts/index_preview_fposts", :locals => {:post => post } %>  
+      <% end %>
+    </div>
+
+    <% if post.is_a? (Fpost) %>
+      <% i = i + 1 %>
+    <% end %>
+
+  <% end %>
+<% end %>
+
+</div>
+  <%= will_paginate @all_posts, previous_label: "Vorherige", next_label: "Nächste", page_links: false %>
+</div>
+
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+  // Umwandlung der Login-Zeit in Millisekunden
+  <% current_sign_in = current_user.current_sign_in_at %>;  // Achtung: Muss ich hier + 1.hour machen? Weil es unterschiedliche Zeitzonen sind?
+  <% current_sign_in = current_sign_in.to_f * 1000 %>
+
+  // Deklaration von zukünftigen Zeitpunkten in Millisekunden
+
+  // In beiden Bedingungen erscheinen zur selben Zeit neue Posts
+  // Nach 2, 6 und 18 Minuten [1080000, 360000, 120000]
+  // Minuten (ACHTUNG: umgedreht)
+  // Ein bisschen später, damit es mit der Fake-Time passt.
+  <% ms_in_future = [1080000, 360000, 120000]%>
+
+  <% ms_from_current_sign_in_on = [] %>
+
+  <% ms_in_future.each do |time| %>
+    <% ms_from_current_sign_in_on << (current_sign_in + time) %>
+  <% end %>
+
+
+  // Ruby array zu JS Array umwandeln. Hier: Zeit in MS von der Startmessung aus (also 1970 oder so?)
+  var now = new Date();
+  var inXMilliseconds = <%= j ms_from_current_sign_in_on.to_json %>
+  var inXDate = [];
+  var timeRemaining = [];
+
+
+  // Javascript Millisekunden in ein eindeutiges Datum umwandeln
+  for (i = 0; i < inXMilliseconds.length; i++) {
+    inXDate[i] = new Date(inXMilliseconds[i]);
+  }
+
+  // Wie lange noch, bis das Datum erreicht wurde? Time remaining für alle Zeitpunkte
+  for (i = 0; i < inXMilliseconds.length; i++) {
+    timeRemaining[i] = (inXDate[i].getTime() - now.getTime());
+  }
+
+  // Alle posts verstecken
+
+  for (i = 0; i < timeRemaining.length; i++) {
+    if (timeRemaining[i] > 0) {
+      $(".post" + i).hide();
+      $(".notifications").hide();
+    }
+  }
+
+  // Posts nach und nach reinbringen
+  for (i = 0 ; i < timeRemaining.length ; i++) {
+    if (timeRemaining[i] > 0) {
+      doSetTimeout(i);
+    }
+  }
+
+  function doSetTimeout(i) {
+    setTimeout(function() {
+
+        $.ajax({
+          url: "/posts/reset_future_posts",
+          type: "GET",
+          dataType: "json",
+          headers: {
+            "Content-Type": "application/json"
+          }, 
+          complete: function(){},
+          success: function(data, textStatus, xhr) {
+            var futurePostsIds = Object.values(data);
+
+            //alert("Das sind meine Daten: "+ futurePostsIds);
+            $(".view-" + futurePostsIds[i]).html(0);
+            $(".like-" + futurePostsIds[i]).html(0);
+          },
+          error: function(jqXHR, textStatus, errorThrown) {              
+            console.log(textStatus, errorThrown);
+          }
+        });
+
+        $(".post" + i).fadeIn();
+        $(".fa-bell").css({"color": "red"});
+        $(".notifications").fadeIn();
+
+    }, timeRemaining[i]);
+  }
+  $(".fa-bell").css({"color": "#EDEFF5"});
+  $(".notifications").hide();
+});
+
+</script>
+

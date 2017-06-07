@@ -1,0 +1,26 @@
+<% if user_signed_in? %>
+
+<div class="statistics">
+  <div class="container header-text">
+    <div class="col-md-6 personal">
+      <%= image_tag current_user.avatar.url %>
+      <span class="stats-small personal-stats">
+        Hallo <%= current_user.first_name %>! Du bist Kurator.
+      </span>
+    </div>
+
+    <div class="col-md-6 personal sharit-stats">
+
+      <span class="stats-small">
+        <% if current_user.group == 0 || current_user.group == 2 %>
+          Leser (heute): <%= current_user.highreaders %>
+        <% else %>
+          Leser (heute): <%= current_user.lowreaders %>
+        <% end %>
+      <span>
+    </div>
+
+  </div>
+</div>
+
+<% end %>

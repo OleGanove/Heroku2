@@ -1,0 +1,30 @@
+<div class="col-md-12 text-center start">
+	<i class="fa fa-paper-plane logo-paper-plane" aria-hidden="true"></i>
+	<h1 class="home-font">	
+	  Willkommen auf Heroku
+	</h1>
+	<h2 class="text-center subtitle">Finde deinen Content. Von Kuratoren ausgesucht.</h2>
+
+	<div class="landing_buttons">
+		<%= link_to "Anmelden", new_user_session_path, class: "btn btn btn-secondary btn-lg btn-left" %>
+		<%= link_to "Registrieren", new_user_registration_path, class: "btn btn-primary btn-lg btn-right" %>
+	</div>
+
+</div>
+
+
+<footer id="landing-page-footer">
+  <div class="container footer-text">
+    <small>
+      Heroku AG Copyright 2017
+    </small>
+    <nav>
+      <ul>
+        <li><%= link_to "Über uns", about_path %></li>
+        <li><%= link_to "Datenschutz", datenschutz_path %></li>
+        <li><%= link_to "Nutzungsbedingungen", nutzung_path %></li>
+        <li><%= link_to "Impressum", impressum_path %></li>
+      </ul>
+    </nav>
+  </div>
+</footer>

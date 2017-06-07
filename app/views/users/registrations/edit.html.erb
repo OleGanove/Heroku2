@@ -1,0 +1,54 @@
+<div class="forms edit-profile">
+
+  <h2><%= t('.title', :resource => resource_class.model_name.human , :default => "Benutzer bearbeiten") %></h2>
+
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :multipart => true, :method => :put }) do |f| %>
+    <%= devise_error_messages! %>
+    <div class="profile-pic">
+      <%= image_tag current_user.avatar.url(:medium) %>
+    </div>
+    <br>
+    <br>
+
+    <div><%= f.label :avatar, "Profilfoto" %><br />
+    <%= f.file_field :avatar %></div>
+
+    <div><%= f.label :username, "Benutzername" %><br />
+    <%= f.text_field :username %></div>
+
+    <div><%= f.label :first_name, "Vorname" %><br/>
+    <%= f.text_field :first_name %>
+    </div>
+
+    <div><%= f.label :last_name, "Nachname" %><br/>
+    <%= f.text_field :last_name %>
+    </div>
+
+    <div><%= f.label :email %><br />
+    <%= f.email_field :email %></div>
+
+    <%- if devise_mapping.confirmable? && resource.pending_reconfirmation? -%>
+      <p>
+        <%= t('.currently_waiting_confirmation_for_email', :email => resource.unconfirmed_email, :default => "Currently waiting confirmation for: %{email}") %>
+      </p>
+    <%- end -%>
+
+    <div><%= f.label :password, "Passwort ändern" %> <i>(<%= t('.leave_blank_if_you_don_t_want_to_change_it', :default => "freilassen, wenn du es nicht ändern möchtest") %>)</i><br />
+    <%= f.password_field :password, :autocomplete => "off" %></div>
+
+    <div><%= f.label :password_confirmation, "Neues Passwort bestätigen" %><br />
+    <%= f.password_field :password_confirmation %></div>
+
+    <div><%= f.label :current_password %> <i>(<%= t('.we_need_your_current_password_to_confirm_your_changes', :default => 'Wir brauchen dein jetziges Passwort, um die Änderungen zu bestätigen.') %>)</i><br />
+    <%= f.password_field :current_password %></div>
+
+    <div><%= f.submit t('.update', :default => "Update"), class: "btn btn-primary" %></div>
+  <% end %>
+
+<!--
+  <h3><%= t('.cancel_my_account', :default => 'Account löschen') %></h3>
+
+  <p><%= link_to t('.cancel_my_account', :default => "Account löschen"), registration_path(resource_name), :data => { :confirm => t('.are_you_sure', :default => "Are you sure?") }, :method => :delete %>.</p>
+
+-->
+</div>

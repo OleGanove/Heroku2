@@ -1,0 +1,104 @@
+<% if post %>
+
+	  <div class="time-and-likes">
+
+	  	<% heroku_timezone = post.created_at %>
+
+	  	<div class="time"><%= time_ago_in_words(heroku_timezone) %></div>
+
+	  	<div class="views icons">
+	  	
+	  		<span class="counter view-<%=post.id%>"> 
+
+	  		  <% num_of_user_views = post.views.where(user_id: current_user).size %>
+
+		  	  <% if current_user.group == 0 || current_user.group == 2 %>
+		  	    <%= num_of_user_views ? post.highviews + num_of_user_views : post.highviews %>
+		  	  <% else %>
+		  	    <%= num_of_user_views ? post.lowviews + num_of_user_views : post.lowviews %>
+		  	  <% end %>
+
+	  		</span>
+	  	
+
+	  		<i class="fa fa-eye eye-<%=post.id%>" aria-hidden="true"></i>	
+	  	</div>
+
+
+	  	<div class="likes icons">
+	  		<span class="counter like-<%=post.id%>"> 
+	  		  <% num_of_user_likes = post.likes.where(user_id: current_user).size %>
+
+		  	  <% if current_user.group == 0 || current_user.group == 2 %>
+		  	    <%= num_of_user_likes ? post.highlikes + num_of_user_likes : post.highlikes %>
+		  	  <% else %>
+		  	    <%= num_of_user_likes ? post.lowlikes + num_of_user_likes : post.lowlikes %>
+		  	  <% end %>
+	  		</span>
+	  		
+	  		<%= link_to upvote_post_path(post), method: :post, class: "heart", remote: true do %>
+	  		  <% if post.likes.where(user_id: current_user).empty? %>
+	  		  	<i class="fa fa-heart-o heart-<%=post.id%>" aria-hidden="true"></i>	
+	  		  <% else %>
+	  		  	<i class="fa fa-heart heart-<%=post.id%>" aria-hidden="true"></i>	
+	  		  <% end %>
+	  		<% end %>
+	  	</div>
+	  </div>
+
+
+	<% preview = LinkThumbnailer.generate(post.link, image_stats: false, verify_ssl: false) %>
+
+	  <div class="index-preview">
+	    <!--<%= link_to content_tag(:span), post.link, target: "_blank" %>-->
+		<div class="image-text">
+
+		  <% if (current_user.group == 0 || current_user.group == 1) && post.pinned %>
+		  	<i class="fa fa-thumb-tack" aria-hidden="true"></i>
+		  <% end %>
+		  
+		  <% if !preview.images.first.nil? %>
+		  	<%= link_to(image_tag(preview.images.first.src.to_s), post.link, class: "link", id: post.id, target: "_blank") %> 
+		  <% end %>
+		  <h4 class="text"><%= link_to preview.title, post.link, class: "link", id: post.id,target: "_blank" %></h4>
+		</div>
+
+		<% if (current_user.group == 0 || current_user.group == 1) && post.pinned %>
+		  <div class="pinned comment">
+		<% else %>
+	      <div class="comment">
+		<% end %>
+    	  <div class="avatar">
+		    <%= image_tag post.user.avatar.url %>
+		  </div>
+
+		  <p class="curator-comment">
+		    Kurator/in <%= post.user.first_name %> <%= post.user.last_name %>: 
+
+		    
+		    <% if post.description.length > 120 %>
+		    	<%= truncate(post.description, length: 120) %>
+		    	<%= link_to 'mehr', '', class: "read-more-#{post.id}" %>
+
+		    	<script>
+			      $('.read-more-<%= post.id %>').on('click', function(e) {
+			        e.preventDefault();
+			        $(this).parent().html('Kurator/in <%= escape_javascript(post.user.first_name) %> <%= escape_javascript(post.user.last_name) %>: <%= escape_javascript(simple_format(post.description)) %>')
+			      })		    		
+		    	</script>
+		    <% else %>
+		    	<%= post.description %>
+		    <% end %>
+		   
+
+
+		  </p>
+		</div>
+	  </div> 
+	 
+	 <!--
+	 <% if post.pinned %>
+		<%= link_to "Beitrag entpinnen?",posts_unpin_path, class: "unpin", :data => {:confirm => "Bist du sicher, dass du deinen Beitrag entpinnen möchtest? "} %>
+	 <% end %>
+	 -->
+<% end %>

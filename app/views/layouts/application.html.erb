@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "home" if controller_name == "home" %>
+    <%= stylesheet_link_tag    'application', media: 'all',
+                                              'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+    <%= render 'layouts/shim' %>
+  </head>
+  
+  <% if action_name === "home" %>
+    <body class="body_home">
+      <% flash.each do |type, message| %>
+        <div class="home-alert alert <%= bootstrap_class_for(type) %> fade in">
+          <button class="close" data-dismiss="alert">×</button>
+          <%= message %>
+        </div>
+      <% end %>
+      <%= yield %>
+  <% else %>
+    <body>
+
+      <%= render 'layouts/new-post-modal' %>
+      <%= render 'layouts/header' %>
+      <%= render 'layouts/statistics' %>
+      <%= render partial: "layouts/flash", flash: flash %> 
+
+
+      <div class="container main-content">
+        <%= yield %>
+      </div>
+
+      <%= render 'layouts/footer' %>
+
+  <% end %>
+    </body>
+</html>
