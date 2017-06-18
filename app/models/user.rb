@@ -54,10 +54,11 @@ class User < ApplicationRecord
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
 
 
-  # Probanden in eine von vier Untersuchungsbedingungen einteilen
+  # Da Post-Studie: Alle in Gruppe pinned und Gruppe low a
   def set_group_belonging
-    group_number = self.id % 4
-    self.update_attributes(group: group_number)
+    #group_number = self.id % 4
+    #self.update_attributes(group: group_number)
+    self.update_attributes(group: 1)
   end
 
   def self.find_for_database_authentication(warden_conditions)
