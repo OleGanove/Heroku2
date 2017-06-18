@@ -22,7 +22,7 @@
                 <a href="#" data-toggle="dropdown" class="dropdown-toggle">Menü <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li>
-                    <%= link_to new_post_path, data: {toggle: "modal", target: "#my-modal", :remote => true} do %>
+                    <%= link_to new_post_path, id: "new-post", data: {toggle: "modal", target: "#my-modal", :remote => true} do %>
                       <span class="fa fa-paper-plane" area-hidden="true"></span> Neuer Beitrag
                     <% end %>
 

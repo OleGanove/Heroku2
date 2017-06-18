@@ -1,0 +1,29 @@
+// turbolinks:load anstatt $(document).ready, da Javascript nicht geladen hatte, wenn die Seite gewechselt wurde
+
+$(document).on('turbolinks:load', function(){
+  
+  // Klicken außerhalb des Modals
+  $('#my-modal').on('hidden.bs.modal', function() {
+    alert("Du hast das Modal geschlossen.");
+  });
+
+  // Modal wird geöffnet
+  $('#new-post').on('click', function() {
+    alert("Du hast das Modal geöffnet.");
+  });
+
+  // Post wird erstellt
+  $('#create-post').on('click', function() {
+    alert("Post wurde erstellt");
+  });  
+
+
+  // Modal wird mit X geschlossen
+  /*
+  $(".close").on("click", function() {
+      alert("Du hast das Modal geschlossen");
+  });
+  */
+});
+
+
