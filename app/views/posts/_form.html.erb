@@ -34,7 +34,7 @@
     
       <%= f.hidden_field :first_time_visited_at, value: Time.now %>
 
-      <%= f.submit "Beitrag erstellen", id: "create-post", class: "btn btn-primary" %>
+      <%= f.submit "Beitrag erstellen", id: "create-post", onclick: "return messageContentScript('Create a post-button clicked.')", class: "btn btn-primary" %>
 
     <% end %>
     </div>  

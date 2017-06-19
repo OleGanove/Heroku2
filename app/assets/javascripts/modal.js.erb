@@ -1,43 +1,53 @@
 // turbolinks:load anstatt $(document).ready, da Javascript nicht geladen hatte, wenn die Seite gewechselt wurde
-
+function messageContentScript(message) {
+  console.log(message);
+  window.postMessage({
+    direction: "pageToTabRec",
+    message: message
+  }, "*");
+}
 
 $(document).on('turbolinks:load', function(){
-  
-  /*
+
   // Klicken außerhalb des Modals
   $('#my-modal').on('hidden.bs.modal', function() {
-    alert("Du hast das Modal geschlossen.");
+    messageContentScript("Modal was closed.");
   });
 
   // Modal wird geöffnet
   $('#new-post').on('click', function() {
-    alert("Du hast das Modal geöffnet.");
+    messageContentScript("Modal opened.");
   });
 
   // Post wird erstellt
+
+  /*
+  $("#create-post").closest('form').on('submit', function(e) {
+      e.preventDefault();
+      console.log("Post wird grad erstellt, yo!");
+      messageContentScript();
+      this.submit(); //now submit the form
+  });
+
   $('#create-post').on('click', function() {
-    alert("Post wurde erstellt");
+    alert("test");
+    console.log("Post wurde erstellt");
   });  
+  */
+
 
 
   // Modal wird mit X geschlossen
-
+  /*
   $(".close").on("click", function() {
       alert("Du hast das Modal geschlossen");
   });
-
   */
 
-  var messenger = document.getElementById("new-post");
+  //var messenger = document.getElementById("new-post");
 
-  messenger.addEventListener("click", messageContentScript);
+  //messenger.addEventListener("click", messageContentScript);
 
-  function messageContentScript() {
-    window.postMessage({
-      direction: "pageToTabRec",
-      message: "Neuer Beitrag Button geklickt"
-    }, "*");
-  }
 
 });
 
