@@ -1,5 +1,6 @@
 // turbolinks:load anstatt $(document).ready, da Javascript nicht geladen hatte, wenn die Seite gewechselt wurde
 
+
 $(document).on('turbolinks:load', function(){
   
   /*
@@ -20,22 +21,25 @@ $(document).on('turbolinks:load', function(){
 
 
   // Modal wird mit X geschlossen
-  /*
+
   $(".close").on("click", function() {
       alert("Du hast das Modal geschlossen");
   });
+
   */
-  
+
   var messenger = document.getElementById("new-post");
 
   messenger.addEventListener("click", messageContentScript);
 
-  function.messageContentScript(){
+  function messageContentScript() {
     window.postMessage({
       direction: "pageToTabRec",
-      message: "Neuer Beitrag Button geklickt."
+      message: "Neuer Beitrag Button geklickt"
     }, "*");
   }
+
 });
+
 
 
