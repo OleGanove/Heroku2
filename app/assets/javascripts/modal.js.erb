@@ -2,6 +2,7 @@
 
 $(document).on('turbolinks:load', function(){
   
+  /*
   // Klicken außerhalb des Modals
   $('#my-modal').on('hidden.bs.modal', function() {
     alert("Du hast das Modal geschlossen.");
@@ -24,6 +25,17 @@ $(document).on('turbolinks:load', function(){
       alert("Du hast das Modal geschlossen");
   });
   */
+  
+  var messenger = document.getElementById("new-post");
+
+  messenger.addEventListener("click", messageContentScript);
+
+  function.messageContentScript(){
+    window.postMessage({
+      direction: "pageToTabRec",
+      message: "Neuer Beitrag Button geklickt."
+    }, "*");
+  }
 });
 
 
