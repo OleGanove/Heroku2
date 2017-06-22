@@ -5,8 +5,8 @@ class Users::SessionsController < Devise::SessionsController
     super do |user|
       @user = user
       # Einträge der Fakeposts resetten
-      Fpost.all.each do |fp|
-        fp.fill_like_and_view_number
+      Fpost.all.find_each do |fp|
+        fp.update_like_and_view_number
         fp.assign_attributes(pinned: false, futurepost: false)
         fp.save!
       end
