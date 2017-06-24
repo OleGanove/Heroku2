@@ -1,3 +1,5 @@
+
+
 class Post < ApplicationRecord
   belongs_to :user
   has_many :likes, dependent: :destroy
@@ -9,7 +11,7 @@ class Post < ApplicationRecord
   #default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true
   validates :description, presence: true
-  validates :link, presence: true
+  validates :link, presence: true, url: {message: "Keine korrekte URL"}
 
   after_save do 
     if pinned? 
@@ -29,4 +31,7 @@ class Post < ApplicationRecord
   def set_fake_time
     self.update_attributes(fake_time: self.created_at)
   end
+
 end
+
+
