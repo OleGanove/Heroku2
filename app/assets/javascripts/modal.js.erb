@@ -48,7 +48,10 @@ $(document).on('turbolinks:load', function(){
 
   //messenger.addEventListener("click", messageContentScript);
 
-
+  // If a flash message is present, send the message.
+  if ($('.alert').length > 0) {
+    messageContentScript($(".alert").text());
+  }
 });
 
 

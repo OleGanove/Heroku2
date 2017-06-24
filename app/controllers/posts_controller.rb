@@ -54,6 +54,16 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
 
+    #respond_to do |format|
+    #  if @post.save
+    #    format.html { redirect_to posts_path, notice: "Dein Beitrag wurde erfolgreich gespeichert." }
+    #    format.js 
+    #  else
+    #    format.html { render 'new', notice: "Leider konnte dein Beitrag nicht gespeichert werden." }
+    #    format.js {render 'new', notice: "Leider konnte dein Beitrag nicht gespeichert werden." }
+    #  end
+    #end
+
     if @post.save
       redirect_to posts_path, notice: "Dein Beitrag wurde erfolgreich gespeichert."
     else
