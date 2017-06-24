@@ -347,7 +347,7 @@ input[type="checkbox"]{
 
   .comment {
     background: $white;
-    min-height: 7.5em;
+    min-height: 8em;
     .avatar {
       width: 45px;
       height: 45px;
@@ -839,6 +839,13 @@ body {
 .main-content {
   margin-top: 3.5em;
 }
+
+.morecontent span {
+    display: none;
+}
+
+
+
 @import "normalize";
 @import "home";
 @import "font-awesome";
