@@ -11,7 +11,7 @@ class Post < ApplicationRecord
   #default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true
   validates :description, presence: true
-  validates :link, presence: true, url: {message: "Keine korrekte URL"}
+  validates :link, presence: true, url: {message: "keine korrekte URL"}
 
   after_save do 
     if pinned? 
