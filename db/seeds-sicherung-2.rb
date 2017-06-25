@@ -76,6 +76,17 @@ Fpost.create!([{
   image_url: 'teaser-201606.jpg'
   },
   {
+  title: '„Facebook nicht die Quelle“: Cambridge Analytica weist Kritik zurück',
+  description: 'Die Big-Data-Firma, die durch den Artikel zu Microtargeting im Politikmarketing bei Facebook ins Rampenlicht geriet, dementiert, dass die verwendeten Daten aus einer Persönlichkeitstest-App bei Facebook stammen.',
+  link: 'http://app.handelsblatt.com/politik/weltgeschichten/wc-kultur-in-asien-beim-klo-ist-der-westen-ein-entwicklungsland/14856734.html?mwl=ok',
+  pinned: false,
+  time_ago: 7616,
+  picture: 'ava7-rectangle.jpg',
+  first_name: 'Dominik',
+  last_name: 'Neustadt',
+  image_url: 'teaser-201607.jpg'
+  },
+  {
   title: 'Wandern auf den Spuren der Literaten',
   description: 'Wer im Raum Zürich lebt oder die Schweizer Metropole besucht und sich für Literatur interessiert, für den gibt es jetzt eine mobile App, die einem mit elf Spaziergängen Einblicke in Schauplätze wichtiger Literaturwerke gibt.',
   link: 'http://www.nzz.ch/zuerich/zuercher-autoren-mit-einem-fuss-in-der-welt-der-literatur-ld.130157',
@@ -142,6 +153,17 @@ Fpost.create!([{
   image_url: 'teaser-201613.jpeg'
   },
   {
+  title: 'Zukunftstag: Chatbot-Design der nächsten Generation',
+  description: 'Assistenten zum Aufräumen und Putzen, zum Spielen oder für Kleidervorschläge. 12-jährige Mädchen designen Chatbots am Zukunftstag bei Zeix.',
+  link: 'https://zeix.com/durchdacht/2016/11/11/zukunftstag-2016-chatbot-design-in-der-naechsten-generation/',
+  pinned: false,
+  time_ago: 6476,
+  picture: 'ava14-rectangle.jpg',
+  first_name: 'Peter',
+  last_name: 'Durr',
+  image_url: 'teaser-201614.jpeg'
+  },
+  {
   title: 'Regelmäßiger Sport trainiert auch das Gedächtnis',
   description: 'Vor allem sollte man dabei aber Training, also einen überschwelligen Reiz, nicht mit Bewegung gleichsetzen, die kaum einen Effekt hat. In dem Artikel wird leider nicht differenziert.',
   link: 'https://www.welt.de/gesundheit/article120160488/Regelmaessiger-Sport-trainiert-auch-das-Gedaechtnis.html',
@@ -197,6 +219,17 @@ Fpost.create!([{
   image_url: 'teaser-201619.jpg'
   },
   {
+  title: 'Gesund, schlank, stark: So wichtig ist Eiweiß',
+  description: 'Eiweiß Update! Ein toller Artikel, der fast schon den Charakter eines Ratgebers hat und alles an Informationen liefert, dass man über Eiweiß wissen sollte, wenn man gesund und sportlich sein möchte!',
+  link: 'http://www.menshealth.de/artikel/tierisches-vs-pflanzliches-eiweiss.359490.html',
+  pinned: false,
+  time_ago: 5862,
+  picture: 'ava22-rectangle.jpg',
+  first_name: 'Christine',
+  last_name: 'Duerr',
+  image_url: 'teaser-201620.jpg'
+  },
+  {
   title: 'Hoch hinaus bei Minusgraden',
   description: 'Klassisch, aber nicht bieder. Angezogen, aber doch lässig. Modern, aber nicht modisch. Der Rollkragenpullover erlebt ein Comeback.',
   link: 'http://www.faz.net/aktuell/stil/mode-design/rollkragenpullover-liegen-wieder-voll-im-trend-14535809.html',
@@ -217,6 +250,17 @@ Fpost.create!([{
   first_name: 'Andreas',
   last_name: 'Kohl',
   image_url: 'teaser-201622.jpg'
+  },
+  {
+  title: 'Post startet 2017 kommerzielle Drohnenflüge',
+  description: 'Vollautomatisiert und bis 5kg Zuladung. Bin gespannt.',
+  link: 'http://www.handelszeitung.ch/digitalisierung/post-startet-2017-kommerzielle-drohnenfluege-1279777',
+  pinned: false,
+  time_ago: 5640,
+  picture: 'ava3-rectangle.jpg',
+  first_name: 'Diana',
+  last_name: 'Hartmann',
+  image_url: 'teaser-201623.jpg'
   },
   {
   title: 'Internationalisierung - Wie Profis die Retouren und Kosten in Grenzen halten',
@@ -263,6 +307,17 @@ Fpost.create!([{
   image_url: 'teaser-201627.jpeg'
   },
   {
+  title: 'Nach Shitstorm: Roland Tichy legt Herausgeberschaft bei Xing News nieder',
+  description: 'Ob das nun eine ungerechtfertigt Kampagne gegen seine Position bei Xing war oder angemessene Kritik, beurteile ich an dieser Stelle nicht. Persönlich empfand ich die Personalie damals, als Tichy zu Xing kam, aber problematisch. Ich verstehe aber, dass man das auch anders bewerten kann.',
+  link: 'http://www.spiegel.de/wirtschaft/unternehmen/roland-tichy-legt-herausgeberschaft-bei-xing-news-nieder-a-1129187.html',
+  pinned: false,
+  time_ago: 5012,
+  picture: 'ava8-rectangle.jpg',
+  first_name: 'Mike',
+  last_name: 'Duerr',
+  image_url: 'teaser-201628.jpg'
+  },
+  {
   title: 'The Ultimate Copy Checklist: 51 Questions to Optimize Every Element of Your Online Cop',
   description: 'Wenn Sie Texte für eine Website schreiben, können Sie nicht einfach die Texte aus der Produkt- oder Imagebroschüre 1:1 kopieren. Mit dieser Übersicht stellen Sie (vor dem Schreiben) die richtigen Fragen, um mit Ihren Onlinetexten mehr zu erreichen. Tipp: Laden Sie die kostenlose Infografik herunter.',
   link: 'http://www.copyblogger.com/optimize-online-copy/',
@@ -283,6 +338,17 @@ Fpost.create!([{
   first_name: 'Lisa',
   last_name: 'Vogel',
   image_url: 'teaser-201630.jpg'
+  },
+  {
+  title: 'Deal: 18.700 AVIOS für 79 Euro und ein Mietwagen am Wochenende geschenkt',
+  description: 'Mietwagen und 18.700 Avios (reichen für 4 Eco Kurzstreckenflüge in Europa) für nur 79 €',
+  link: 'https://www.svenblogt.de/deal-18-700-avios-fuer-79-euro-und-ein-mietwagen-am-wochenende-geschenkt/',
+  pinned: false,
+  time_ago: 4344,
+  picture: 'ava11-rectangle.jpg',
+  first_name: 'Mandy',
+  last_name: 'Kluge',
+  image_url: 'teaser-201631.jpg'
   },
   {
   title: '2. Klasse: Freies WLAN der Bahn wird nach 200 Megabyte gedrosselt',
@@ -384,6 +450,17 @@ Fpost.create!([{
   image_url: 'teaser-201640.jpg'
   },
   {
+  title: 'Wall Street Journal Movie Critic Mistakes Dev Patel for Kal Penn',
+  description: 'Ups..',
+  link: 'https://variety.com/2016/film/news/wall-street-journal-dev-patel-kal-penn-1201926666/',
+  pinned: false,
+  time_ago: 3496,
+  picture: 'ava1-rectangle.jpg',
+  first_name: 'Robert',
+  last_name: 'Pfaff',
+  image_url: 'teaser-201641.jpg'
+  },
+  {
   title: 'Weshalb es kaum gute Werwolf-Filme gibt',
   description: 'Berechtigte Frage',
   link: 'http://www.splatterwelt.ch/?p=7682',
@@ -450,6 +527,17 @@ Fpost.create!([{
   image_url: 'teaser-201647.jpg'
   },
   {
+  title: 'Warum Weihnachten das neue Kreativ-Hoch für Videos ist',
+  description: 'Und hier gilt definitiv nicht "je kürzer je besser". Weg von Zeitlimits hin zu einer wirklich guten Spannungskurve der Story.',
+  link: 'https://onlinemarketing.de/news/edeka-lidl-weihnachten-kreativ-hoch-videos',
+  pinned: false,
+  time_ago: 2390,
+  picture: 'ava8-rectangle.jpg',
+  first_name: 'Mike',
+  last_name: 'Duerr',
+  image_url: 'teaser-201648.jpg'
+  },
+  {
   title: 'Video Games Are Boring',
   description: 'Game Design Kommentar von Brie Code, ehemalige Programmiererin bei Ubisoft – The (game) experience must help people understand their lives more.',
   link: 'http://www.gamesindustry.biz/articles/2016-11-07-video-games-are-boring',
@@ -505,7 +593,8 @@ Fpost.create!([{
   image_url: 'teaser-201653.jpg'
   },
   {
-  title: 'Warum Marken & Unternehmen sich mit Snapchat beschäftigen sollten',
+  title: '
+Warum Marken & Unternehmen sich mit Snapchat beschäftigen sollten',
   description: 'Laut Schätzung des US-Marktforschers eMarketer soll Snapchat in diesem Jahr Erlöse von fast 370 Millionen Dollar erwirtschaften – und bis Ende 2017 knapp die Umsatzmilliarde erreichen. (Zitat)',
   link: 'http://blog.wiwo.de/look-at-it/2016/12/08/warum-marken-unternehmen-sich-mit-snapchat-beschaeftigen-sollten/',
   pinned: false,
@@ -525,6 +614,17 @@ Fpost.create!([{
   first_name: 'Jana',
   last_name: 'Müller',
   image_url: 'teaser-201655.jpg'
+  },
+  {
+  title: 'Sein letzter Traum war ein Leben ohne Smartphone',
+  description: 'Für Roger Willemsen würde ich sogar auf mein Smartphone verzichten. Nun ist sein Vermächtnis erschienen: seine poetische Kritik am dauerdigitalen und transparenten Leben,  einem Konfettiregen aus Bildern und Daten. Und wer ihn kennt, der weiß, dass dies nichts mit Pessimismus zu tun hat.',
+  link: 'https://www.welt.de/kultur/literarischewelt/article159734542/Sein-letzter-Traum-war-ein-Leben-ohne-Smartphone.html',
+  pinned: false,
+  time_ago: 1517,
+  picture: 'ava16-rectangle.jpg',
+  first_name: 'Antje',
+  last_name: 'Eichmann',
+  image_url: 'teaser-201656.jpg'
   },
   {
   title: 'Kathedralen des Wissens',
@@ -560,6 +660,17 @@ Fpost.create!([{
   image_url: 'teaser-201659.jpg'
   },
   {
+  title: 'Youtuber erreichen höchste Interaktionsrate auf Instagram',
+  description: 'Die Zahlen mögen auf den ersten Blick beindrucken. Aber es handelt sich um erste Reaktionen - was folgt nach dem Herzchen oder dem Like?',
+  link: 'http://www.horizont.net/marketing/nachrichten/Influencer-Studie-Youtuber-erreichen-hoechste-Interaktionsrate-bei-Instagram-Postings-144523',
+  pinned: false,
+  time_ago: 639,
+  picture: 'ava22-rectangle.jpg',
+  first_name: 'Christine',
+  last_name: 'Duerr',
+  image_url: 'teaser-201660.jpg'
+  },
+  {
   title: 'So entsteht ein handgestrickter Kaschmir-Pullover',
   description: 'Drei Tage dauert die Fertigung eines Pullovers von Brunello Cucinelli, der von Hand gestrickt und mit Hilfe einer Maschine zusammengesetzt wird.',
   link: 'http://www.welt.de/icon/mode/article159083499/So-entsteht-ein-handgestrickter-Kaschmir-Pullover.html',
@@ -580,6 +691,17 @@ Fpost.create!([{
   first_name: 'Andreas',
   last_name: 'Kohl',
   image_url: 'teaser-201662.jpg'
+  },
+  {
+  title: '0,000000000000000007 Sekunden',
+  description: 'Sooo kurz: Bayrische Forscher messen die kürzeste, je registrierte Zeitspanne.',
+  link: 'http://www.spiegel.de/wissenschaft/technik/forscher-messen-kuerzeste-zeitspanne-a-1121413.html',
+  pinned: false,
+  time_ago: 226,
+  picture: 'ava3-rectangle.jpg',
+  first_name: 'Diana',
+  last_name: 'Hartmann',
+  image_url: 'teaser-201663.jpg'
   },
   {
   title: 'Kitzel mich, ich will dich kennenlernen',
@@ -615,6 +737,17 @@ Fpost.create!([{
   image_url: 'teaser-201666.jpg'
   },
   {
+  title: '5 Gründe, warum ihr „The Crown“ unbedingt sehen solltet',
+  description: 'Eine der besten Netflix-Neuzugänge der letzten Monate.',
+  link: 'http://www.serienfuchs.de/neuigkeiten/5-gruende-warum-ihr-the-crown-unbedingt-sehen-solltet-11622/',
+  pinned: false,
+  time_ago: 153,
+  picture: 'ava7-rectangle.jpg',
+  first_name: 'Dominik',
+  last_name: 'Neustadt',
+  image_url: 'teaser-201667.jpg'
+  },
+  {
   title: 'Schritt für Schritt zur Revolution',
   description: 'Gone Home oder "Dear Esther" sind laut Kritiker gar keine Computerspiele – Spannender Konter-Kommentar zur ästhetischen Funktion von Interaktivität und Spielemechaniken',
   link: 'http://www.zeit.de/digital/games/2016-11/walking-simulatoren-games-gone-home-dear-esther/komplettansicht',
@@ -635,6 +768,17 @@ Fpost.create!([{
   first_name: 'Daniela',
   last_name: 'Freud',
   image_url: 'teaser-201669.jpeg'
+  },
+  {
+  title: 'So essen die Deutschen',
+  description: 'Es soll schnell gehen, möglichst günstig und natürlich auch gesund sein: der „Ernährungsreport 2017“ gibt Auskunft darüber, was die Deutschen am liebsten essen.',
+  link: 'https://www.welt.de/wirtschaft/article160822594/So-essen-die-Deutschen.html',
+  pinned: false,
+  time_ago: 23,
+  picture: 'ava10-rectangle.jpg',
+  first_name: 'Lisa',
+  last_name: 'Vogel',
+  image_url: 'teaser-201670.jpg'
   },
   {
   title: 'Kommen die besten Herrenschuhe vielleicht doch aus Wien?',
@@ -659,6 +803,28 @@ Fpost.create!([{
   image_url: 'teaser-201672.jpg'
   },
   {
+  title: 'Google hat 2016 fast eine Milliarde "Piraterie-Links" gelöscht',
+  description: 'Neuer Rekord bei Löschanträgen.',
+  link: 'https://futurezone.at/digital-life/google-hat-2016-fast-eine-milliarde-piraterie-links-geloescht/238.683.652',
+  pinned: false,
+  time_ago: 412,
+  picture: 'ava13-rectangle.jpg',
+  first_name: 'Abhay',
+  last_name: 'Agni',
+  image_url: 'teaser-201673.jpeg'
+  },
+  {
+  title: 'Die zehn schönsten Modefilme',
+  description: 'Wieso man wieder einmal "The Great Gatsby", "Der Teufel trägt Prada" und "Absolutely Fashion: Inside British Vogue" schauen sollte.',
+  link: 'http://www.vogue.de/people-kultur/kultur-tipps/top-ten-modefilme',
+  pinned: false,
+  time_ago: 412,
+  picture: 'ava15-rectangle.jpg',
+  first_name: 'Jana',
+  last_name: 'Müller',
+  image_url: 'teaser-201674.jpg'
+  },
+  {
   title: 'Für eine komplette Garderobe braucht man nur 33 Teile',
   description: 'Deutsche sind Spitzenreiter im Kleiderkaufen. Vieles davon landet früher oder später im Keller, in der Altkleidersammlung oder sogar im Abfall. Dabei würden wir mit 33 Kleidungsstücken bestens auskommen.',
   link: 'http://www.welt.de/icon/mode/article160287600/Fuer-eine-komplette-Garderobe-braucht-man-nur-33-Teile.html',
@@ -668,6 +834,17 @@ Fpost.create!([{
   first_name: 'Antje',
   last_name: 'Eichmann',
   image_url: 'teaser-201675.jpg'
+  },
+  {
+  title: 'McDonalds eröffnet Filiale am Vatikan',
+  description: 'Zum Jahreswechsel hat in der Nähe des Petersplatzes eine McDonalds-Filiale eröffnet. Das kommt nicht bei allen gut an.',
+  link: 'http://www.spiegel.de/wirtschaft/mcdonald-s-am-vatikan-eroeffnet-trotz-protesten-a-1128142.html',
+  pinned: false,
+  time_ago: 412,
+  picture: 'ava17-rectangle.jpg',
+  first_name: 'Michelle',
+  last_name: 'Foerster',
+  image_url: 'teaser-201676.jpg'
   }])
 
 
