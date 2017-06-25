@@ -1,8 +1,9 @@
 $(document).on('turbolinks:load', function(){
 
+  $("#immediate_error").hide();
+
   $('#my-modal').on("blur", "#post_link", function() {
     console.log($("#post_link").val())
-
     var link = $("#post_link").val();
     
     $.ajax({
@@ -16,16 +17,17 @@ $(document).on('turbolinks:load', function(){
             complete: function() {},
              success: function(data, textStatus, xhr) {
                         console.log(data);
-                        if (data) {
-                          $(".immediate_error").hide().html("*der Link ist leider nicht gültig. Bitte wähle einen anderen Link.").fadeIn("slow");
+
+                        if (data && $("#post_link").val().length) {
+                          $(".error").hide();     // All other error messages should disappear
+                          $("#immediate_error").css("margin", "0 0 10px").html("*der Link ist leider nicht gültig. Bitte wähle einen anderen Link.").fadeIn("slow");
                         }
                         else {
-                          $(".immediate_error").fadeOut("slow");
+                          $("#immediate_error").fadeOut("slow");
                         }
                       },
                error: function(jqXHR, textStatus, errorThrown) {
                         console.log(textStatus, errorThrown);
-                        $(".immediate_error").hide();
                       }
     });
   });

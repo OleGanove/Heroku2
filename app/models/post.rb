@@ -11,7 +11,7 @@ class Post < ApplicationRecord
   #default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true
   validates :description, presence: true
-  validates :link, presence: true, url: {message: "keine korrekte URL"}
+  validates :link, presence: true, url: {allow_nil: true, allow_blank: true, message: "keine korrekte URL"}
   validate  :linkthumbnailer_errors
 
   after_save do 
@@ -34,11 +34,15 @@ class Post < ApplicationRecord
   end
 
   def linkthumbnailer_errors
-    begin
-      LinkThumbnailer.generate(self.link, image_stats: false, verify_ssl: false) 
-    rescue 
-      errors.add(:link, "der Link ist leider nicht gültig. Bitte wähle einen anderen Link.")
-    end
+
+      begin
+        LinkThumbnailer.generate(self.link, image_stats: false, verify_ssl: false) 
+      rescue 
+        if (!self.link.empty?)
+          errors.add(:link, "der Link ist leider nicht gültig. Bitte wähle einen anderen Link.")
+        end
+      end
+
   end
 
 end

@@ -4,7 +4,7 @@
     <%= form_for @post, remote: true do |f| %>
 
       <%= f.label :link, "Link" %><br>
-      <p class="immediate_error error"></p>
+      <p id="immediate_error" class="error"></p>
       <% if @post.errors[:link] %>
           <% @post.errors[:link].each do |msg| %>
             <p class="error">*<%= msg %></p>
