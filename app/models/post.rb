@@ -12,6 +12,7 @@ class Post < ApplicationRecord
   validates :user_id, presence: true
   validates :description, presence: true
   validates :link, presence: true, url: {message: "keine korrekte URL"}
+  validate  :linkthumbnailer_errors
 
   after_save do 
     if pinned? 
@@ -30,6 +31,14 @@ class Post < ApplicationRecord
 
   def set_fake_time
     self.update_attributes(fake_time: self.created_at)
+  end
+
+  def linkthumbnailer_errors
+    begin
+      LinkThumbnailer.generate(self.link, image_stats: false, verify_ssl: false) 
+    rescue 
+      errors.add(:link, "der Link ist leider nicht gültig. Bitte wähle einen anderen Link.")
+    end
   end
 
 end

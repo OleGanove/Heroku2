@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   post 'posts/fview' => 'posts#fview'
   post 'posts/view'  => 'posts#view'
+  post 'posts/validate' => 'posts#validate'
   get 'posts/unpin' => 'posts#unpin'
   get 'posts/reset_future_posts' => 'posts#reset_future_posts'
 
@@ -27,3 +28,4 @@ Rails.application.routes.draw do
   get '/impressum', to: 'static_pages#impressum'
   get '*path' => redirect('/')
 end
+
