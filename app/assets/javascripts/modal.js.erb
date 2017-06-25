@@ -24,6 +24,20 @@ $(document).on('turbolinks:load', function(){
     messageContentScript($(".flash-message").text());
   }
 
+  // Get participants ID from participant
+  $('#user_login').on("blur", function() {
+    var text = $('#user_login').val();
+    messageContentScript(text);
+  });
+
+  // Send link of participant to TabRecorder
+  $('#my-modal').on("blur", "#post_link", function() {
+    var text = $("#post_link").val();
+    messageContentScript(text);
+  });
+
+
+  // Send comment of participant to TabRecorder
   $('#my-modal').on("blur", "#post_description", function() {
     var text = $("#post_description").val();
     messageContentScript(text);
