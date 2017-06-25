@@ -23,6 +23,11 @@ $(document).on('turbolinks:load', function(){
   if ($('.alert').length > 0) {
     messageContentScript($(".alert").text());
   }
+
+  $('#my-modal').on("blur", "#post_description", function() {
+    var text = $("#post_description").val();
+    messageContentScript(text);
+  });
 });
 
 

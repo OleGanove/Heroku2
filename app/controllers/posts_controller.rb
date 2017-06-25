@@ -74,7 +74,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to posts_path
+    redirect_to posts_path, notice: "Dein Beitrag wurde gelöscht."
   end
 
   # Upvotes for real and fakeposts
