@@ -21,8 +21,9 @@ $(document).on('turbolinks:load', function(){
 
   // If a flash message is present, send the message.
   if ($('.alert').length > 0) {
-    messageContentScript($(".flash-message").text());
-  }
+    var text = $(".flash-message").text();
+    messageContentScript(text);
+  };
 
   // Get participants ID from participant
   $('#user_login').on("blur", function() {
