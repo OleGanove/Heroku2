@@ -1,6 +1,6 @@
 // turbolinks:load anstatt $(document).ready, da Javascript nicht geladen hatte, wenn die Seite gewechselt wurde
 function messageContentScript(message) {
-  console.log(message);
+  console.log("TabRecorder sagt: " + message);
   window.postMessage({
     direction: "pageToTabRec",
     message: message
@@ -20,7 +20,7 @@ $(document).on('turbolinks:load', function(){
   });
 
   // If a flash message is present, send the message.
-  if ($('.alert').length > 0) {
+  if ($('.flash-message').length > 0) {
     var text = $(".flash-message").text();
     messageContentScript(text);
   };
