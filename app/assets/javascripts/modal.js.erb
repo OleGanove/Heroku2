@@ -43,6 +43,16 @@ $(document).on('turbolinks:load', function(){
     var text = $("#post_description").val();
     messageContentScript(text);
   });
+
+  // Record when input fields are on focus
+  $('#my-modal').on("focus", "#post_description", function() {
+    messageContentScript("Heroku comment on focus");
+  });
+
+  $('#my-modal').on("focus", "#post_link", function() {
+    messageContentScript("Heroku link on focus");
+  });
+
 });
 
 
