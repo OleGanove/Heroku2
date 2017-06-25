@@ -20,7 +20,7 @@ $(document).on('turbolinks:load', function(){
                           $(".immediate_error").hide().html("*der Link ist leider nicht gültig. Bitte wähle einen anderen Link.").fadeIn("slow");
                         }
                         else {
-                          $(".immediate_error").hide();
+                          $(".immediate_error").fadeOut("slow");
                         }
                       },
                error: function(jqXHR, textStatus, errorThrown) {
