@@ -21,7 +21,7 @@ $(document).on('turbolinks:load', function(){
 
   // If a flash message is present, send the message.
   if ($('.alert').length > 0) {
-    messageContentScript($(".alert").text());
+    messageContentScript($(".flash-message").text());
   }
 
   $('#my-modal').on("blur", "#post_description", function() {
